@@ -114,3 +114,63 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+// step 1 instantiate all the element needed for componet
+
+function articleMaker(artObject){
+  const {data:title, data:date, data:firstParagraph, data:secondParagraph, data:thirdParagraph} = artObject; 
+  
+
+ const articlesDiv = document.createElement('div');
+ const articlesHeader = document.createElement('title');
+ const articlesDate = document.createElement('p');
+ const articlesDate2 = document.createElement('p');
+ const articlesDate3 = document.createElement('p');
+ const articlesSpan = document.createElement('span');
+
+// step 2 setting up the structure of elements
+
+
+articlesDiv.appendChild(articlesHeader);
+articlesDiv.appendChild(articlesDate);
+articlesDiv.appendChild(articlesDate2);
+articlesDiv.appendChild(articlesDate3);
+articlesDiv.appendChild(articlesSpan);
+
+// step 3 adding proper class names to elements
+articlesDiv.classList.add('articles');
+articlesDate.classList.add('date');
+articlesSpan.classList.add('expandButton');
+
+// step 4 setting text content using arguments as raw material
+ 
+ title.textContent = articlesHeader;
+ date.textContent = articlesDate;
+ firstParagraph.textContent = articlesDate2;
+ secondParagraph.textContent = articlesDate3;
+ thirdParagraph.textContent = articlesSpan;
+
+// Step 5 toggling button onpen and close by removing and adding class names
+
+articlesSpan.addEventListener('click', function(event){
+  articlesDiv.classList.toggle('article-open')
+});
+
+// Step 6 returning the articleObject
+return artObject
+
+}
+
+// Task 7 Looping thru the data creating componets for content and title and append to the dom
+
+data.forEach(artCompData => {
+  const comp = articleMaker(artCompData)
+  articlesDiv.appendChild(comp)
+});
+
+
+
+
+
+
+

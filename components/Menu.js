@@ -48,14 +48,17 @@ const menuDiv = document.createElement('div');
 // Step 3 select menu button
 const menuButton = document.querySelector('.menu-button');
 
-// Step 4 add click event listener to menu nutton, when click toggle menu-open class on di.menu
+// Step 4 add click event listener to menu nutton, when click toggle menu-open class on div.menu
 
 menuButton.addEventListener('click', function(event){
 menuDiv.classList.toggle('menu--open')
-})
+});
 
 
 // Step 5
-
+return menuDiv
+};
 // Step 6
- }
+menuMaker(function(arrayItems) {
+return arrayItems.appendChild(menuDiv);
+});

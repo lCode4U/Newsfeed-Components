@@ -116,12 +116,12 @@ const data = [
 */
 
 // step 1 instantiate all the element needed for componet
-
+const articlesDiv = document.createElement('div');
 function articleMaker(artObject){
   const {data:title, data:date, data:firstParagraph, data:secondParagraph, data:thirdParagraph} = artObject; 
   
 
- const articlesDiv = document.createElement('div');
+
  const articlesHeader = document.createElement('title');
  const articlesDate = document.createElement('p');
  const articlesDate2 = document.createElement('p');
@@ -152,12 +152,12 @@ articlesSpan.classList.add('expandButton');
 
 // Step 5 toggling button onpen and close by removing and adding class names
 
-articlesSpan.addEventListener('click', function(event){
+articlesSpan.addEventListener('click', function(){
   articlesDiv.classList.toggle('article-open')
 });
 
 // Step 6 returning the articleObject
-return artObject
+  return artObject;
 
 }
 

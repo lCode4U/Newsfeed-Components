@@ -117,9 +117,12 @@ const data = [
 
 // step 1 instantiate all the element needed for componet
 const articlesDiv = document.createElement('div');
-function articleMaker(artObject){
-  const {data:title, data:date, data:firstParagraph, data:secondParagraph, data:thirdParagraph} = artObject; 
+
+  const {title:, date:, firstParagraph:, secondParagraph:, thirdParagraph:} = artObject; 
   
+
+function articleMaker(artObject){
+
 
 
  const articlesHeader = document.createElement('title');
@@ -143,12 +146,9 @@ articlesDate.classList.add('date');
 articlesSpan.classList.add('expandButton');
 
 // step 4 setting text content using arguments as raw material
- 
- title.textContent = articlesHeader;
- date.textContent = articlesDate;
- firstParagraph.textContent = articlesDate2;
- secondParagraph.textContent = articlesDate3;
- thirdParagraph.textContent = articlesSpan;
+ artticlDiv.forEach(element => {console.log(element.textContent);
+   
+ });
 
 // Step 5 toggling button onpen and close by removing and adding class names
 
